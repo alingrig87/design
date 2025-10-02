@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scandinavian Essence - Modern Interior Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #333333;
+            --accent-color: #f5f5f5;
+            --text-dark: #2d2d2d;
+            --text-light: #6b7280;
+            --bg-light: #fafafa;
+            --bg-white: #ffffff;
+            --bg-grey: #f5f5f5;
+            --grey-dark: #4a4a4a;
+            --grey-medium: #8e8e8e;
+            --grey-light: #e5e5e5;
+            --border-color: #e0e0e0;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--bg-white);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--grey-light);
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .navbar-logo img {
+            max-height: 45px;
+            max-width: 120px;
+            object-fit: contain;
+        }
+
+        .navbar-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .navbar-right {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+        }
+
+        .nav-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .nav-item.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-white), var(--accent-color));
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--grey-light);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero .description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        /* Main Content */
+        .main {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 80px;
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        /* Requirements Section */
+        .requirements-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .requirement-item {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .requirement-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow);
+        }
+
+        .requirement-item i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Room Cards */
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .room-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .room-card-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .room-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover .room-card-image img {
+            transform: scale(1.05);
+        }
+
+        .room-card-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .room-card-content {
+            padding: 25px;
+            position: relative;
+        }
+
+        .room-card-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .room-card-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .room-card-arrow {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover .room-card-arrow {
+            transform: translateX(5px);
+        }
+
+        .room-section {
+            background: var(--bg-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .room-section:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .room-title {
+            background: var(--gradient-gold);
+            color: var(--grey-dark);
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .room-images {
+            padding: 20px;
+            display: grid;
+            gap: 15px;
+        }
+
+        .image-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: scale(1.02);
+        }
+
+        .room-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover .room-image {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .image-container:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .image-caption {
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: 50px auto;
+            max-width: 90%;
+            max-height: 80%;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--grey-dark);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 25px;
+                margin-bottom: 40px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .navbar-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .navbar-right {
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .nav-item {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+
+            .navbar-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-left">
+                    <a href="index.html" class="navbar-logo">
+                        <img src="images/logo.png" alt="Logo Designer">
+                        <span class="navbar-title">Scandinavian Essence</span>
+                    </a>
+                </div>
+                <div class="navbar-right">
+                    <a href="#cerinte" class="nav-item">
+                        <i class="fas fa-list-check"></i>
+                        Cerințe
+                    </a>
+                    <a href="schita-moodboard.html" class="nav-item">
+                        <i class="fas fa-drafting-compass"></i>
+                        Schiță & Moodboard
+                    </a>
+                    <a href="hol.html" class="nav-item">
+                        <i class="fas fa-door-open"></i>
+                        Hol
+                    </a>
+                    <a href="living.html" class="nav-item">
+                        <i class="fas fa-couch"></i>
+                        Living
+                    </a>
+                    <a href="bucatarie.html" class="nav-item">
+                        <i class="fas fa-utensils"></i>
+                        Bucătărie
+                    </a>
+                    <a href="dormitor.html" class="nav-item">
+                        <i class="fas fa-bed"></i>
+                        Dormitor
+                    </a>
+                    <a href="camera-copil.html" class="nav-item">
+                        <i class="fas fa-child"></i>
+                        Camera E.
+                    </a>
+                    <a href="bai.html" class="nav-item">
+                        <i class="fas fa-bath"></i>
+                        Băi
+                    </a>
+                    <a href="balcon-implementare.html" class="nav-item">
+                        <i class="fas fa-tools"></i>
+                        Balcon & Implementare
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Scandinavian Essence</h1>
+            <p class="subtitle">Modern Interior Design Project</p>
+            <p class="description">
+                Acest apartament a fost amenajat pentru o familie tânără cu un copil în vârstă de aproximativ 2 ani, 
+                ținând cont de nevoile specifice și preferințele pentru un design cald și funcțional.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Requirements Section -->
+            <section id="cerinte" class="section">
+                <h2 class="section-title">Cerințe și Dorințe</h2>
+                <div class="requirements-list">
+                    <div class="requirement-item">
+                        <i class="fas fa-washing-machine"></i>
+                        <h3>Amplasarea utilităților</h3>
+                        <p>Amplasarea mașinii de spălat rufe și a uscătorului în bucătărie pentru optimizarea spațiului.</p>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-desk"></i>
+                        <h3>Zona de birou</h3>
+                        <p>Înlocuirea zonei de dining cu o zonă de birou și integrarea biroului existent.</p>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Spațiu pentru terariu</h3>
+                        <p>Găsirea unui spațiu potrivit pentru amplasarea unui șarpe în terariu (o zonă mai înaltă unde copilul nu poate ajunge).</p>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-palette"></i>
+                        <h3>Preferințe de design</h3>
+                        <p>Preferințe personale pentru lemn în nuanțe calde și albastru regal ca pată de culoare în living.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rooms Overview Cards -->
+            <section class="section">
+                <h2 class="section-title">Explorează Spațiile</h2>
+                <div class="rooms-grid">
+                    <a href="schita-moodboard.html" class="room-card">
+                        <div class="room-card-image">
+                            <img src="images/page_2_img_1.jpeg" alt="Schiță și Moodboard">
+                            <div class="room-card-overlay">
+                                <i class="fas fa-drafting-compass"></i>
+                            </div>
+                        </div>
+                        <div class="room-card-content">
+                            <h3>Schiță & Moodboard</h3>
+                            <p>Planul general al apartamentului și paleta de culori și materiale alese pentru design.</p>
+                            <span class="room-card-arrow">→</span>
+                        </div>
+                    </a>
+
+                    <a href="hol.html" class="room-card">
+                        <div class="room-card-image">
+                            <img src="images/page_4_img_1.jpeg" alt="Hol">
+                            <div class="room-card-overlay">
+                                <i class="fas fa-door-open"></i>
+                            </div>
+                        </div>
+                        <div class="room-card-content">
+                            <h3>Hol</h3>
+                            <p>Zona de intrare a apartamentului cu soluții de depozitare și design funcțional.</p>
+                            <span class="room-card-arrow">→</span>
+                        </div>
+                    </a>
+
+                    <a href="living.html" class="room-card">
+                        <div class="room-card-image">
+                            <img src="images/page_6_img_1.jpeg" alt="Living">
+                            <div class="room-card-overlay">
+                                <i class="fas fa-couch"></i>
+                            </div>
+                        </div>
+                        <div class="room-card-content">
+                            <h3>Living</h3>
+                            <p>Spațiul central al casei cu zonă de relaxare, birou și loc special pentru terariu.</p>
+                            <span class="room-card-arrow">→</span>
+                        </div>
+                    </a>
+
+                    <a href="bucatarie.html" class="room-card">
+                        <div class="room-card-image">
+                            <img src="images/page_9_img_1.jpeg" alt="Bucătărie">
+                            <div class="room-card-overlay">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                        </div>
+                        <div class="room-card-content">
+                            <h3>Bucătărie</h3>
+                            <p>Bucătăria modernă cu toate utilităților integrate, inclusiv mașina de spălat.</p>
+                            <span class="room-card-arrow">→</span>
+                        </div>
+                    </a>
+
+                    <a href="dormitor.html" class="room-card">
+                        <div class="room-card-image">
+                            <img src="images/page_11_img_1.jpeg" alt="Dormitor">
+                            <div class="room-card-overlay">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                        </div>
+                        <div class="room-card-content">
+                            <h3>Dormitor Matrimonial</h3>
+                            <p>Dormitorul principal cu design relaxant și spații de depozitare generoase.</p>
+                            <span class="room-card-arrow">→</span>
+                        </div>
+                    </a>
+
+                    <a href="camera-copil.html" class="room-card">
+                        <div class="room-card-image">
+                            <img src="images/page_14_img_1.jpeg" alt="Camera copilului">
+                            <div class="room-card-overlay">
+                                <i class="fas fa-child"></i>
+                            </div>
+                        </div>
+                        <div class="room-card-content">
+                            <h3>Camera lui E.</h3>
+                            <p>Camera copilului de 2 ani cu design sigur, funcțional și stimulant pentru dezvoltare.</p>
+                            <span class="room-card-arrow">→</span>
+                        </div>
+                    </a>
+
+                    <a href="bai.html" class="room-card">
+                        <div class="room-card-image">
+                            <img src="images/page_16_img_1.jpeg" alt="Băi">
+                            <div class="room-card-overlay">
+                                <i class="fas fa-bath"></i>
+                            </div>
+                        </div>
+                        <div class="room-card-content">
+                            <h3>Băile</h3>
+                            <p>Baia principală și baia secundară cu design modern și optimizarea spațiului.</p>
+                            <span class="room-card-arrow">→</span>
+                        </div>
+                    </a>
+
+                    <a href="balcon-implementare.html" class="room-card">
+                        <div class="room-card-image">
+                            <img src="images/page_19_img_1.jpeg" alt="Balcon și Implementare">
+                            <div class="room-card-overlay">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                        </div>
+                        <div class="room-card-content">
+                            <h3>Balcon & Implementare</h3>
+                            <p>Amenajarea balconului și progresul implementării proiectului în realitate.</p>
+                            <span class="room-card-arrow">→</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Scandinavian Essence - Design Interior</h3>
+                <p>Proiect de amenajare modernă cu influențe scandinave, adaptat nevoilor unei familii tinere.</p>
+                <p style="margin-top: 20px; opacity: 0.7;">
+                    <i class="fas fa-palette"></i>
+                    Design interior profesional | Stil modern scandinav
+                </p>
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--grey-medium);">
+                    <img src="images/logo.png" alt="Logo Designer" style="max-height: 40px; opacity: 0.8;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Modal functionality
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImage.src = imageSrc;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.room-image');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.3s ease';
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.room-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
